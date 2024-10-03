@@ -44,6 +44,7 @@ builder.Services.AddSwaggerGen(opts =>
 {
     opts.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
+        Description = "Para poder autenticarse, debe proveer el token de autorización en el header. Asi: Bearer {token}",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Scheme = "Bearer"

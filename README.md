@@ -102,6 +102,10 @@ Este comando creará y ejecutará los contenedores de Docker para la aplicación
 - **Frontend**: Visite `http://localhost:CLIENT_PORT/` (por defecto `7000`).
 - **Backend API**: Pruebe la API en `http://localhost:SERVER_PORT/swagger/index.html` (por defecto `5010`).
 
+Para poder consumir la API directamente en Swagger, deberá autenticarse. Una vez que haya iniciado sesion, la API devuelve un token de acceso que debe ser incluido en el encabezado de autorización de las solicitudes. Para hacer esto, haga clic en el botón `Authorize` en la parte superior derecha de la página de Swagger, y pegue el token de acceso en el campo `Value` con el prefijo `Bearer` asi: `Bearer your_access_token`.
+
+
+
 ## Tecnologías
 
 - **Frontend**: Angular 17
