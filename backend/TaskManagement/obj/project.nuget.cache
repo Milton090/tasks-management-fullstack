@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hw9TRZiU5yc=",
+  "dgSpecHash": "gDAXZcrP8uk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\milto\\OneDrive\\Escritorio\\pruebaTecnicaFullStack\\backend\\TaskManagement\\TaskManagement.csproj",
+  "projectFilePath": "C:\\Users\\milto\\OneDrive\\Escritorio\\pruebasTecnicas\\SistemaSentryFullStack\\backend\\TaskManagement\\TaskManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\milto\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\milto\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

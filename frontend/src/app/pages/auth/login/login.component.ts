@@ -35,7 +35,6 @@ export class LoginComponent {
 
 
 	login() {
-		console.log(this.userData.valid);
 		const user: Auth = {
 			email: this.userData.value.email,
 			password: this.userData.value.password

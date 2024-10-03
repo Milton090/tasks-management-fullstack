@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { StateService } from '../../../services/state.service';
-import { CommonModule, NgStyle } from '@angular/common';
+import { NgStyle } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -31,7 +31,6 @@ import { Observable } from 'rxjs';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    CommonModule
   ],
   templateUrl: './list-states.component.html',
   styleUrl: './list-states.component.css'

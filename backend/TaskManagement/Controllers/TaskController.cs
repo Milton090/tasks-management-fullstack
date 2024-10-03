@@ -35,6 +35,63 @@ namespace TaskManagement.Controllers
         }
 
 
+        [HttpGet("{id}")]
+        public IActionResult GetTaskById(Int32 id)
+        {
+            var response = new ResponseAPI
+            {
+                Success = false,
+                StatusCode = StatusCodes.Status404NotFound,
+                Message = "No existe una tarea con el ID especificado"
+            };
+
+            var task = _taskRepo.GetTaskById(id);
+
+            if (task == null)
+            {
+
+                return NotFound(response);
+            }
+
+            response.Success = true;
+            response.StatusCode = StatusCodes.Status200OK;
+            response.Message = "Tarea obtenida exitosamente";
+            response.Data = task;
+
+            return Ok(response);
+        }
+
+        [HttpGet("state/{stateId}")]
+        public IActionResult GetTasksByState(Int32 stateId)
+        {
+            var response = new ResponseAPI
+            {
+                Success = false,
+                StatusCode = StatusCodes.Status404NotFound,
+            };
+
+            if (!_taskRepo.IsValidState(stateId))
+            {
+                response.Message = "No existe un estado con el ID especificado";
+                return NotFound(response);
+            }
+
+            var tasks = _taskRepo.GetTasksByState(stateId);
+
+            if (tasks == null)
+            {
+                response.Message = "No existen tareas con el estado especificado";
+                return NotFound(response);
+            }
+
+            response.Success = true;
+            response.StatusCode = StatusCodes.Status200OK;
+            response.Message = "Tareas obtenidas exitosamente";
+            response.Data = tasks;
+            return Ok(response);
+        }
+
+
         [HttpPost]
         public IActionResult AddTask(TaskDto task)
         {

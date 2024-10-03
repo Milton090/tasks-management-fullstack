@@ -7672,11 +7672,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\milto\\OneDrive\\Escritorio\\pruebaTecnicaFullStack\\backend\\TaskManagement\\TaskManagement.csproj",
+      "projectUniqueName": "C:\\Users\\milto\\OneDrive\\Escritorio\\pruebasTecnicas\\SistemaSentryFullStack\\backend\\TaskManagement\\TaskManagement.csproj",
       "projectName": "TaskManagement",
-      "projectPath": "C:\\Users\\milto\\OneDrive\\Escritorio\\pruebaTecnicaFullStack\\backend\\TaskManagement\\TaskManagement.csproj",
+      "projectPath": "C:\\Users\\milto\\OneDrive\\Escritorio\\pruebasTecnicas\\SistemaSentryFullStack\\backend\\TaskManagement\\TaskManagement.csproj",
       "packagesPath": "C:\\Users\\milto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\milto\\OneDrive\\Escritorio\\pruebaTecnicaFullStack\\backend\\TaskManagement\\obj\\",
+      "outputPath": "C:\\Users\\milto\\OneDrive\\Escritorio\\pruebasTecnicas\\SistemaSentryFullStack\\backend\\TaskManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\milto\\AppData\\Roaming\\NuGet\\NuGet.Config",

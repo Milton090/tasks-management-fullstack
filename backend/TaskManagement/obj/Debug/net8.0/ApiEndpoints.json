@@ -122,6 +122,22 @@
   },
   {
     "ContainingType": "TaskManagement.Controllers.TaskController",
+    "Method": "GetTaskById",
+    "RelativePath": "api/tasks/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskManagement.Controllers.TaskController",
     "Method": "UpdateTask",
     "RelativePath": "api/tasks/{id}",
     "HttpMethod": "PUT",
@@ -151,6 +167,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskManagement.Controllers.TaskController",
+    "Method": "GetTasksByState",
+    "RelativePath": "api/tasks/state/{stateId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stateId",
         "Type": "System.Int32",
         "IsRequired": true
       }

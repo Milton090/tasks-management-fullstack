@@ -9,7 +9,7 @@ import { TaskService } from '../../../services/task.service';
 import { State, Task } from '../../../interfaces';
 import { StateService } from '../../../services/state.service';
 import { Observable } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-form-task',
@@ -21,7 +21,8 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatInputModule,
     FormsModule,
-    CommonModule,
+    AsyncPipe,
+    NgClass
   ],
   templateUrl: './form-task.component.html',
   styleUrl: './form-task.component.css',

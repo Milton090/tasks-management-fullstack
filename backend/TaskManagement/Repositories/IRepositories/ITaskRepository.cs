@@ -6,6 +6,7 @@ namespace TaskManagement.Repositories.IRepositories
     {
         public IEnumerable<Models.Task> GetAllTasks();
         public Models.Task GetTaskById(Int32 id);
+        public Models.Task GetTasksByState(Int32 stateId);
         public Boolean AddTask(TaskDto task);
         public Boolean UpdateTask(Int32 id, TaskDto task);
         public Boolean DeleteTask(Int32 id);

@@ -28,6 +28,13 @@ namespace TaskManagement.Repositories
             return _context.LoadData<Models.Task>(sql, new { Id = id }).FirstOrDefault();
         }
 
+        public TaskManagement.Models.Task GetTasksByState(Int32 stateId)
+        {
+            var sql = "SELECT Id, Title, StateId, Created, Updated, UserId FROM TaskManagement.dbo.Task WHERE StateId = @StateId";
+
+            return _context.LoadData<Models.Task>(sql, new { StateId = stateId }).FirstOrDefault();
+        }
+
         public Boolean AddTask(TaskDto task)
         {
             var sql = "INSERT INTO TaskManagement.dbo.Task (Title, StateId, Created, Updated, UserId) " +
