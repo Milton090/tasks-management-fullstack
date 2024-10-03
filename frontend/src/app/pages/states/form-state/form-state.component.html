@@ -1,0 +1,25 @@
+<div class="container">
+   <br>
+   <h2>{{data ? 'Editar' : 'Crear'}} estado</h2>
+   <br>
+   <div class="container">
+      <form [formGroup]="newState">
+         <div class="form-group">
+            <label>Nombre <b style="color: red;">*</b></label>
+            <input type="text" class="form-control" formControlName="name" [ngClass]="{
+               'is-invalid': newState.get('name')?.invalid && (newState.get('name')?.touched || newState.get('name')?.dirty),
+               'is-valid': newState.get('name')?.valid
+             }">
+            @if(newState.get('name')?.hasError('required') && newState.get('name')?.touched){
+            <mat-error>
+               El nombre es requerido
+            </mat-error>
+            }
+         </div>
+         <br>
+         <button type="submit" mat-raised-button color="primary" [disabled]="newState.invalid"
+            (click)="saveState()">Guardar</button>
+         <br><br>
+      </form>
+   </div>
+</div>

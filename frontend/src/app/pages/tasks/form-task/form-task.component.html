@@ -1,0 +1,50 @@
+<div class="container">
+   <br>
+   <h2>{{data ? 'Editar' : 'Crear'}} tarea</h2>
+   <br>
+   <div class="container">
+      <form [formGroup]="newTask">
+         <div class="row">
+            <div class="col">
+               <div class="form-group">
+                  <label>Titulo <b style="color: red;">*</b></label>
+                  <input type="text" class="form-control" formControlName="title" [ngClass]="{
+                     'is-invalid': newTask.get('title')?.invalid && (newTask.get('title')?.touched || newTask.get('title')?.dirty),
+                     'is-valid': newTask.get('title')?.valid
+                   }">
+                  @if(newTask.get('title')?.hasError('required') && newTask.get('title')?.touched){
+                  <mat-error>
+                     El titulo es requerido
+                  </mat-error>
+                  }
+               </div>
+            </div>
+            <div class="col">
+               <div class="form-group">
+                  <label>Estado <b style="color: red;">*</b></label>
+                  <mat-select class="form-control" formControlName="stateId" placeholder="---SELECCIONE---" [ngClass]="{
+                     'is-invalid': newTask.get('stateId')?.invalid && (newTask.get('stateId')?.touched || newTask.get('stateId')?.dirty),
+                     'is-valid': newTask.get('stateId')?.valid
+                   }">
+
+                     @for(state of states$ | async; track $index){
+                     <mat-option [value]="state.id">
+                        {{ state.name }}
+                     </mat-option>
+                     }
+                  </mat-select>
+                  @if(newTask.get('stateId')?.hasError('required') && newTask.get('stateId')?.touched){
+                  <mat-error>
+                     El estado es requerido
+                  </mat-error>
+                  }
+               </div>
+            </div>
+         </div>
+         <br>
+         <button type="submit" mat-raised-button color="primary" [disabled]="newTask.invalid"
+            (click)="saveTask()">Guardar</button>
+         <br><br>
+      </form>
+   </div>
+</div>

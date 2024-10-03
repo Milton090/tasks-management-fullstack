@@ -1,0 +1,73 @@
+<app-menu>
+   <div class="container">
+      <br>
+      <h1>Estados</h1>
+      <div class="row">
+         <div class="col-12 col-md-6">
+            <button mat-raised-button color="primary" (click)="openDialog()" style="margin-top: 20px;">
+               <mat-icon>add</mat-icon> Nuevo estado
+            </button>
+         </div>
+
+         <div class="col-12 col-md-6">
+            <div class="d-flex justify-content-end">
+               <mat-form-field appearance="outline">
+                  <mat-label>Búsqueda</mat-label>
+                  <input matInput (keyup)="applyFilter($event)" #input autocomplete="off">
+                  <button mat-button matSuffix disabled>
+                     <mat-icon color="primary">search</mat-icon>
+                  </button>
+               </mat-form-field>
+            </div>
+         </div>
+      </div>
+
+      <div class="mat-elevation-z8 table-container">
+         <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="num">
+               <th mat-header-cell *matHeaderCellDef>#</th>
+               <td mat-cell *matCellDef="let state; let i = index" class="max-width-cell">{{ i + 1 }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+               <th mat-header-cell *matHeaderCellDef>Nombre</th>
+               <td mat-cell *matCellDef="let state" class="max-width-cell">{{ state.name }}</td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="actions">
+               <th mat-header-cell *matHeaderCellDef>Acciones</th>
+               <td mat-cell *matCellDef="let state">
+                  <button mat-icon-button [matMenuTriggerFor]="actionsMenu">
+                     <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #actionsMenu="matMenu">
+                     <button mat-menu-item (click)="openDialog(state)">
+                        <mat-icon [ngStyle]="{'color': '#1A237E'}">edit</mat-icon>
+                        <span>Editar</span>
+                     </button>
+                     <button mat-menu-item (click)="deleteState(state.id)">
+                        <mat-icon [ngStyle]="{'color': 'red'}">delete</mat-icon>
+                        <span>Eliminar</span>
+                     </button>
+                  </mat-menu>
+               </td>
+            </ng-container>
+
+
+
+            <tr mat-header-row *matHeaderRowDef="['num', 'name', 'actions']">
+            </tr>
+            <tr mat-row *matRowDef="let row; columns: ['num', 'name', 'actions']">
+            </tr>
+         </table>
+      </div>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator><br>
+      @if(dataSource.filteredData.length === 0){
+      <div class="no-results-message" style="text-align: center;">
+         <strong>NO SE ENCONTRARON RESULTADOS.</strong>
+      </div>
+      }
+      <br><br>
+   </div>
+</app-menu>
